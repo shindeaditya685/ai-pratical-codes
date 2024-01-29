@@ -1,3 +1,5 @@
+package org.task.ai;
+
 import java.util.Arrays;
 
 class Job implements Comparable<Job> {
@@ -55,11 +57,12 @@ public class JobScheduling {
     public static void main(String[] args) {
         // Example jobs with id, deadline, and profit
         Job[] jobs = {
-                new Job('a', 2, 100),
-                new Job('b', 1, 19),
-                new Job('c', 2, 27),
-                new Job('d', 1, 25),
-                new Job('e', 3, 15)
+                new Job('a', 5, 200),
+                new Job('b', 3, 180),
+                new Job('c', 3, 190),
+                new Job('d', 2, 300),
+                new Job('e', 4, 120),
+                new Job('f', 2, 100)
         };
 
         System.out.println("Original job sequence: ");
