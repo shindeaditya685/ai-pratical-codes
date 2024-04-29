@@ -1,0 +1,78 @@
+# Define responses
+responses = {
+    "hi": "Hello! How can I assist you today?",
+    "hello": "Hi there! What can I do for you?",
+    "how are you": "I'm just a chatbot, but thanks for asking!",
+    "bye": "Goodbye! Have a great day!",
+    "thank you": "You're welcome!",
+    "how can i improve my cardiovascular health?": "You can improve cardiovascular health by exercising regularly, eating a healthy diet, managing stress, and avoiding smoking.",
+    
+"effective ways to manage stress and anxiety?": "Effective ways to manage stress and anxiety include practicing relaxation techniques, exercising regularly, getting enough sleep",
+    "can you recommend a healthy diet plan for weight loss?": "A healthy diet plan for weight loss includes eating plenty of fruits, vegetables.",
+    
+"benefits of regular exercise for overall health?": "Benefits for overall health, including improved cardiovascular health, weight management, mood enhancement, and increased energy levels.",
+    
+"prevent the spread of flu during flu season?": "You can prevent the spread of flu by getting vaccinated, practicing good hand hygiene",
+    
+"early detection of cancer?": "Recommended cancer screenings include colonoscopies for colorectal cancer, and prostate-specific antigen (PSA) tests for prostate cancer, among others.",
+    
+"what should i do if i suspect someone is having a heart attack?": "If you suspect someone is having a heart attack, call emergency services immediately",
+    
+"are there any natural remedies for common cold and flu symptoms?": "Some natural remedies for cold and flu symptoms include staying hydrated, getting plenty of rest, drinking warm liquids like tea or broth, and using saline nasal sprays to relieve congestion.",
+    
+"importance of vaccinations for children and adults?": "Vaccinations are important for preventing serious diseases and their complications."
+}
+
+# Function to get response
+def get_response(message):
+    # Convert message to lowercase
+    message = message.lower()
+    
+    # Check if message is in responses
+    if message in responses:
+        return responses[message]
+    else:
+        return "I'm sorry, I didn't understand that."
+
+# Main loop
+def main():
+    print("Welcome! Type 'bye' to exit.")
+    while True:
+        # Get user input
+        user_input = input("You: ")
+        
+        # Check if user wants to exit
+        if user_input.lower() == "bye":
+            print(get_response(user_input))
+            break
+        
+        # Get and print response
+        response = get_response(user_input)
+        print("Bot:", response)
+
+if __name__ == "__main__":
+    main()
+
+<----------------OUTPUT---------------------->
+
+Welcome! Type 'bye' to exit.
+You: hello
+Bot: Hi there! What can I do for you?
+You: how can i improve my cardiovascular health?
+Bot: You can improve cardiovascular health by exercising regularly, eating a healthy diet, managing stress, and avoiding smoking.
+You: effective ways to manage stress and anxiety?
+Bot: Effective ways to manage stress and anxiety include practicing relaxation techniques, exercising regularly, getting enough sleep
+You: can you recommend a healthy diet plan for weight loss?
+Bot: A healthy diet plan for weight loss includes eating plenty of fruits, vegetables.
+You: benefits of regular exercise for overall health?
+Bot: Benefits for overall health, including improved cardiovascular health, weight management, mood enhancement, and increased energy levels.
+You: prevent the spread of flu during flu season?
+Bot: You can prevent the spread of flu by getting vaccinated, practicing good hand hygiene
+You: are there any natural remedies for common cold and flu symptoms?
+Bot: Some natural remedies for cold and flu symptoms include staying hydrated, getting plenty of rest, drinking warm liquids like tea or broth,
+ and using saline nasal sprays to relieve congestion.
+You: importance of vaccinations for children and adults?
+Bot: Vaccinations are important for preventing serious diseases and their complications.
+You: bye
+Goodbye! Have a great day!
+
