@@ -68,3 +68,21 @@ class GraphTraversal {
         bfs(startNode);
     }
 }
+// Enter number of nodes: 
+// 7
+// Enter number of edges: 
+// 9
+// Enter edges: 
+// 0 1
+// 0 5
+// 0 6
+// 1 3
+// 1 4
+// 1 5
+// 4 2
+// 4 6
+// 6 0
+// Enter the starting node for DFS and BFS: 
+// 0
+// DFS: 0 1 3 4 2 6 5 
+// BFS: 0 1 5 6 3 4 2
