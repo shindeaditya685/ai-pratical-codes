@@ -1,10 +1,8 @@
 import java.util.*;
 
 class GraphTraversal {
-    static final int MAX_NODES  = 100;
-    static ArrayList<Integer>[] graph = new ArrayList[MAX_NODES];
-    static int[] distances = new int[MAX_NODES];
-    static boolean[] visited = new boolean[MAX_NODES];
+    static ArrayList<Integer>[] graph;
+    static boolean[] visited;
     
     static void dfs(int node) {
         visited[node] = true;
@@ -17,44 +15,41 @@ class GraphTraversal {
         }
     }
     
-    
-    static void bfs(int node) {
-        Arrays.fill(distances, -1);
-        distances[node] = 0;
-        
+    static void bfs(int startNode) {
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(node);
-        
+        boolean[] visited = new boolean[graph.length];
+        queue.add(startNode);
+        visited[startNode] = true;
         
         while (!queue.isEmpty()) {
             int u = queue.poll();
             System.out.print(u + " ");
             
             for (int v : graph[u]) {
-                if (distances[v] == -1) {
-                    distances[v] = distances[u] + 1;
+                if (!visited[v]) {
+                    visited[v] = true;
                     queue.add(v);
                 }
             }
         }
     }
     
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("Enter number of nodes: ");
         int numNodes = scanner.nextInt();
         
-        System.out.println("Enter the number of edges: ");
+        System.out.println("Enter number of edges: ");
         int numEdges = scanner.nextInt();
         
-        for (int i = 0; i < MAX_NODES; i++) {
+        graph = new ArrayList[numNodes];
+        for (int i = 0; i < numNodes; i++) {
             graph[i] = new ArrayList<>();
         }
         
-        System.out.println("Enter the edges: ");
+        System.out.println("Enter edges: ");
         for (int i = 0; i < numEdges; i++) {
-            System.out.println("Enter edges " + (i+1) + " (u v): ");
             int u = scanner.nextInt();
             int v = scanner.nextInt();
             graph[u].add(v);
@@ -65,7 +60,7 @@ class GraphTraversal {
         int startNode = scanner.nextInt();
         
         System.out.print("DFS: ");
-        Arrays.fill(visited, false);
+        visited = new boolean[numNodes];
         dfs(startNode);
         System.out.println();
 
